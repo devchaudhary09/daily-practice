@@ -166,3 +166,20 @@ j==0? j++ : j--;
    Triple Nested                  O(n^3)
    Simple if/else                 O(1)
   */    
+
+   //ROTATE AN ARRAY K TIMES 
+
+   function rotateArray(arr, k){
+    let n = arr.length;
+    k = k % n;                                // for avoid extra rotation 
+    let result = [];                                         
+
+    for(let i = n-k; i< n; i++){
+      result.push(arr[i]);
+    }
+    for(let i = 0; i < n-k; i++){
+      result.push(arr[i]);
+    }
+    return result;
+   }
+   console.log(rotateArray(arr, k));
