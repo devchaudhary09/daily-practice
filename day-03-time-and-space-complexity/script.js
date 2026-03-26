@@ -234,3 +234,18 @@ function findDisappearedNumbers(nums) {
 
     return result;
 }
+
+//__________________________________________________________________________________________________________
+//FIND THE DUPLICATE NUMBER 
+function findDuplicate(nums) {
+    for (let i = 0; i < nums.length; i++) {
+        let index = Math.abs(nums[i]);
+
+        if (nums[index] < 0) {
+            return index; // already visited → duplicate
+        }
+
+        nums[index] = -nums[index];
+    }
+}
+//____________________________________________________________________________________________________
