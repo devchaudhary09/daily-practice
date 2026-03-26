@@ -183,3 +183,31 @@ j==0? j++ : j--;
     return result;
    }
    console.log(rotateArray(arr, k));
+
+   //__________________________________________________________________________________________________
+   // ARRAY ROTATION   TIME COMPLEXITY = O(N), SPACE COMPLEXITY = O(1)
+   function rotate(nums, k) {
+    const n = nums.length;
+    k = k % n;
+
+    // helper function to reverse part of array
+    function reverse(start, end) {
+        while (start < end) {
+            [nums[start], nums[end]] = [nums[end], nums[start]];
+            start++;
+            end--;
+        }
+    }
+
+    // Step 1: reverse whole array
+    reverse(0, n - 1);
+
+    // Step 2: reverse first k elements
+    reverse(0, k - 1);
+
+    // Step 3: reverse remaining elements
+    reverse(k, n - 1);
+}
+
+
+//_________________________________________________________________________________________________
