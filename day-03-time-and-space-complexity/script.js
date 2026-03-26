@@ -186,9 +186,10 @@ j==0? j++ : j--;
 
    //__________________________________________________________________________________________________
    // ARRAY ROTATION   TIME COMPLEXITY = O(N), SPACE COMPLEXITY = O(1)
+
    function rotate(nums, k) {
     const n = nums.length;
-    k = k % n;
+    k = k % n;                                               // FOR AVOID EXTRA ROTATION (n = 5 and k  = 7    then k = 7/5 = 2  , k = 2 only 2 valid rotation not 7)
 
     // helper function to reverse part of array
     function reverse(start, end) {
