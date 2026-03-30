@@ -72,3 +72,73 @@ var mostWordsFound = function(sentences) {
     return maxWords;
 };
 console.log(mostWordsFound(["i love k", "i am in love with k"]))
+
+//________________________________________________________________________________________________________
+
+/*Asked In :
+
+Google
+Wallmart Labs
+You have given a string , You have to add characters at start of string to make it a palindrome .
+
+return the minimum number of characters required to add to make it a palindrome.
+
+
+
+Example 1:
+
+Input:
+
+str = "abcd"
+
+Output: 3
+
+Explanation: Inserted character marked with bold characters in dcbabcd
+
+
+
+Example 2:
+
+Input:
+
+str = "aa"
+
+Output: 0
+
+Explanation:"aa" is already a palindrome.
+*/
+
+function totaladd(s){
+  let rev = s.split("").reverse().join("");
+
+  for(let i = 0; i < s.length; i++){
+    if(s.slice(i) === rev.slice(0, s.length-i)){
+      return i;
+    }
+  }
+  return s.length;
+}
+console.log(totaladd("abcd"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
